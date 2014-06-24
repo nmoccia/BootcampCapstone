@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CapstoneModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CapstoneEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="CapstoneModel.Category" />
+    <EntitySet Name="Events" EntityType="CapstoneModel.Event" />
+    <EntitySet Name="Foods" EntityType="CapstoneModel.Food" />
+    <EntitySet Name="Registrations" EntityType="CapstoneModel.Registration" />
+    <EntitySet Name="sysdiagrams" EntityType="CapstoneModel.sysdiagram" />
+    <EntitySet Name="Types" EntityType="CapstoneModel.Type" />
+    <EntitySet Name="Users" EntityType="CapstoneModel.User" />
+    <AssociationSet Name="FK_Event_Category" Association="CapstoneModel.FK_Event_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Type" Association="CapstoneModel.FK_Event_Type">
+      <End Role="Type" EntitySet="Types" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registration_Event" Association="CapstoneModel.FK_Registration_Event">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Registration" EntitySet="Registrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Food" Association="CapstoneModel.FK_User_Food">
+      <End Role="Food" EntitySet="Foods" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registration_User" Association="CapstoneModel.FK_Registration_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Registration" EntitySet="Registrations" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CapstoneModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CapstoneModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="category1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Events" Relationship="CapstoneModel.FK_Event_Category" FromRole="Category" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="eventID" />
+    </Key>
+    <Property Name="eventID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="startDate" Type="DateTime" Precision="3" />
+    <Property Name="endDate" Type="DateTime" Precision="3" />
+    <Property Name="categoryID" Type="Int32" />
+    <Property Name="typeID" Type="Int32" />
+    <Property Name="eventDescription" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ownerID" Type="Int32" />
+    <Property Name="logoPath" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="eventStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Category" Relationship="CapstoneModel.FK_Event_Category" FromRole="Event" ToRole="Category" />
+    <NavigationProperty Name="Type" Relationship="CapstoneModel.FK_Event_Type" FromRole="Event" ToRole="Type" />
+    <NavigationProperty Name="Registrations" Relationship="CapstoneModel.FK_Registration_Event" FromRole="Event" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="foodID" />
+    </Key>
+    <Property Name="foodID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="food1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Users" Relationship="CapstoneModel.FK_User_Food" FromRole="Food" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="registrationID" />
+    </Key>
+    <Property Name="registrationID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="eventID" Type="Int32" />
+    <NavigationProperty Name="Event" Relationship="CapstoneModel.FK_Registration_Event" FromRole="Registration" ToRole="Event" />
+    <NavigationProperty Name="User" Relationship="CapstoneModel.FK_Registration_User" FromRole="Registration" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="typeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="type1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Events" Relationship="CapstoneModel.FK_Event_Type" FromRole="Type" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phoneHome" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phoneCell" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phoneOffice" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="companyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="branchLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="foodID" Type="Int32" />
+    <Property Name="additionalInfo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Food" Relationship="CapstoneModel.FK_User_Food" FromRole="User" ToRole="Food" />
+    <NavigationProperty Name="Registrations" Relationship="CapstoneModel.FK_Registration_User" FromRole="User" ToRole="Registration" />
+  </EntityType>
+  <Association Name="FK_Event_Category">
+    <End Role="Category" Type="CapstoneModel.Category" Multiplicity="0..1" />
+    <End Role="Event" Type="CapstoneModel.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Type">
+    <End Role="Type" Type="CapstoneModel.Type" Multiplicity="0..1" />
+    <End Role="Event" Type="CapstoneModel.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="typeID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="typeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registration_Event">
+    <End Role="Event" Type="CapstoneModel.Event" Multiplicity="0..1" />
+    <End Role="Registration" Type="CapstoneModel.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="eventID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="eventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Food">
+    <End Role="Food" Type="CapstoneModel.Food" Multiplicity="0..1" />
+    <End Role="User" Type="CapstoneModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="foodID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="foodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registration_User">
+    <End Role="User" Type="CapstoneModel.User" Multiplicity="0..1" />
+    <End Role="Registration" Type="CapstoneModel.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
