@@ -61,6 +61,16 @@ namespace BootcampCapstone.Controllers
             return View(user);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogIn(BootcampCapstone.Models.AccountModel.LogInModel lm)
+        {
+            throw new Exception("HERHERHERHEREHR");
+            return View(lm);
+        }
+
+
         //
         // GET: /User/Edit/5
 

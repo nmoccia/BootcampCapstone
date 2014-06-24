@@ -16,5 +16,12 @@ namespace BootcampCapstone.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(BootcampCapstone.Models.AccountModel.LogInModel lm)
+        {
+            return View();
+        }
+
     }
 }
