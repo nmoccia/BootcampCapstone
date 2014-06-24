@@ -26,5 +26,10 @@ namespace BootcampCapstone.Queries
             }
         }
 
+        private User HttpNotFound ()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
