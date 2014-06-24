@@ -131,7 +131,6 @@
     <Compile Include="Category.cs">
       <DependentUpon>EventManager.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Event.cs">
