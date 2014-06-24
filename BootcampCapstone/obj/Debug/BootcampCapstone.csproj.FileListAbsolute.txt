@@ -29,3 +29,34 @@ c:\users\nmoccia\documents\visual studio 2012\Projects\BootcampCapstone\Bootcamp
 c:\users\nmoccia\documents\visual studio 2012\Projects\BootcampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.csprojResolveAssemblyReference.cache
 c:\users\nmoccia\documents\visual studio 2012\Projects\BootcampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.dll
 c:\users\nmoccia\documents\visual studio 2012\Projects\BootcampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.pdb
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\BootcampCapstone.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\BootcampCapstone.pdb
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\Antlr3.Runtime.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\EntityFramework.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\Newtonsoft.Json.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Net.Http.Formatting.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Http.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Http.WebHost.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Mvc.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Optimization.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Providers.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Razor.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.Razor.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\WebGrease.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\EntityFramework.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\Newtonsoft.Json.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Net.Http.Formatting.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Http.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Http.WebHost.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Mvc.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.Razor.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\bin\System.Web.WebPages.Razor.xml
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.csprojResolveAssemblyReference.cache
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.dll
+C:\Users\ripruitt\Documents\Capstone\BootCampCapstone\BootcampCapstone\obj\Debug\BootcampCapstone.pdb
